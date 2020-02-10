@@ -1,0 +1,205 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+												INTERVIEW JAVA
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+
+- Cosa vuol dire che una classe è immutabile
+
+	Una classe è immutabile se lo stato di un oggetto di quella classe, una volta creato e inizializzato non può più essere modificato.
+
+- Esempio classe Java immutabile
+* java.lang.Long.
+	Comme esempi di classe immutabile, abbiamo: 
+		* java.lang.String.
+		* java.lang.Boolean.
+		* java.lang.Bigdecimal.
+		* enum.
+		  ...
+
+- Differenze tra List e Set
+	List e Set implementano la classe Collection. Le Collection sono dei contenitori dei dati o strutture dati dello stesso tipo.
+	La differenza tra List e Set è:
+		* List
+			- può contenere duplicati.
+			- è una sequenza ordianta di elementi.
+			- gli elementi possono essere inseriti sia in testa che in coda.
+			- può ammettere più di un valore nullo.
+		* Set
+			- non ammette duplicati. inserendo un valore duplicati, si va a cancellare il vecchio valore.
+			- gli elementi non sono necessariamente ordianti.
+			- gli elementi vengono inseriti solo in testa
+			- ammette al massimo un valore nullo
+
+- Differenze tra un ArrayList e una LinkedList (in termini di struttura sottostante e delle operazioni classiche effettuate su liste: accesso casuale, inserimento in testa, inserimento in coda, inserimento in posizione casuale, rimozione in testa, rimozione in coda ecc…)
+
+	 ArrayList e LinkedList sono due implementazione dell'interfaccia List delle Collection in java. in entrambe le implementazioni, gli elementi sono ordinati e ammettono duplicati.
+	 La differenza tra ArrayList e LinkedList è che ArrayList si basa su Array e LinkedList si basa su struttura dati collegati, offre anche operazione di add(),  remove() e iterator().
+
+	 LinkedList è più veloce nelle operazione di insert e delete degli elementi. ArrayList è più veloce nelle operazioni di accesso e ricerca di un elemento per indici perché si procede in maniera arbitrario verso la posizione dell'elemento e non acesso sequenziale
+
+- Complessità limite di un algoritmo di ordinamento non avendo informazioni sui dati contenuti, descrivere un caso in cui avendo informazioni specifiche sui dati la complessità diminuisce.
+
+- Polimorfismo
+	DEF: Nella programmazione ad oggetto, il Polimorfismo come proprio indicato dal nome non è altro che la capacità di un oggetto di poter assumere diverse forme.
+	Un esempio di polimorfismo sono le interfacce. possiamo definire in un'interfaccia un metodo e far assumere diversi comportamenti 
+	a quel metodo asseconda delle nostre necessità nel codice.
+
+- Ereditarietà
+	DEF: Meccanismo per definire una nuova classe (classe derivata) come specializzazione di un’altra (classe base).
+		* La classe base modella un concetto generico e la classe derivata modela un concetto più specializzato.
+		* La classe derivata eredita di tutte le proprietà(attributi e metodi) della classe base.
+		* La classe derivata può aggiungere altre funizionalità.
+		* La classe derivata può ridefinire metodi esistenti (Polimorfismo).
+	Si definisce una classe derivata attraverso la parola Extends seguita dal nome della classe base.
+
+- Interfaccia/Classe astratta/Classe concreta
+	* L'interfaccia è una classe java con metodi privi di implementazione.
+	* Le classi astrate sono classi in cui uno o più metodi possono essere privi di implementazione
+	* Le classi non astratte si dicono concrete
+
+- Reflection
+	è un'Application Programming Interface (API) che permette di modificare il comportamento di un metodo, interfaccia, classe a runtime.
+	ci viene fornito da java sul pakage  java.lang.reflect.
+	reflection ci fornisce informazioni sulla classe a cui appartiene un oggetto e i metodi che possono essere eseguiti usando quell'oggetto
+
+- List/Map/Set --> studiare tutti i tipo
+	List, Set e Map sono tre importanti interfacce della Java collection framework.
+	La principale differenza tra List e Set è che List può contenere elementi ripettuti, invece Set non li ammette.
+	Map mette a disposizione struttura dati che ammette una chiave ed un valore. Map non ammette chiave duplicati ma può contenere valore duplicati.
+
+		COLLECTION FRAMEWORK IMPLEMENTATIONS.
+
+		LIST--> LinkedList, ArrayList, Vector
+
+		SET---> HashSet, LinkedHashSet, TreeSet
+
+		MAP---> HashMap(ammette al massimo una chiave nulla e un valore nullo), Tree Map, LinkedHashMap, Hashtable(non ammette chiave nulla e valore nullo)
+	Ogni implementazione di queste tre interfacce rispettano il contratto di ognuno di essi.
+
+
+- String, è immutabile? StringBuffer, StringBuilder e String --> differenze
+	* Sì, String è una classe immutabile.
+	* StringBuffer e StringBuilder sono oggetti muttabili in java.
+	* StringBuffer offre sicurezza sui thread(thread safe) ma a un costo prestazionale.StringBuilder no Thread safe questo è il motivo 
+	  per cui StringBuilder è più veloce di StringBuffer
+ In generale per manipolare una stringa in un ambiente non multi-thread si usa stringBuffer o StringBuilder.
+
+- Differenza fra int e Integer; long e Long
+	* Long è un oggetto di long.  long usa 64bits.
+
+	* Integer è un oggetto di int. int usa 32bits
+
+- metodo statico e metodo di istanza
+	* un metodo d'istanza è un metodo che richiede la creazione di un oggeto della classe a cui appartiene prima di poter accedere al metodo.
+
+	* un metodo statico invece non richiede la creazione di un oggetto di quella classe per accedere al metodo. si accede al metodo facendo
+	  referenza al nome della classe. 
+
+- tipi di modificatori
+	* public: 		visibile da qualsiasi parte del programma
+	* private: 		visibile solo dall'interno della classe stessa
+	* protected:	visibile solo dalle classi dello stesso package e dalle sottoclassi
+	* default: 		visibile dallo stesso package e dalle sottoclassi se sono nello stesso package. 
+	            	È la visibilità assegnata di default se    non viene specificato nulla. 
+
+- for, for each
+	* for ci consente di iterare su una struttura dati decidendo quanti elementi vogliamo visitare e la posizione da cui partire
+	* foreach itera la struttura dati su cui viene applicata e cicla dal primo elemento all'ultimo della struttura. 
+
+- memory leak
+	un memory leak ("perdita o fuoriuscita di memoria") è un particolare tipo di consumo non voluto di memoria dovuto alla mancata deallocazione dalla stessa, di variabili/dati non più utilizzati da parte dei processi.
+
+- Differenza tra Overloading e Overriding
+	* Overloading è quando in una classe abbiamo diversi metodi con lo stesso nome ma parametri diversi.
+
+	* Overriding è un meccanismo che ci permette di avere nella stessa classe più metodi con lo stesso nome e stessi parametri.
+	ESEMPIO DI OVERRIDING
+
+			class Dog{
+		    public void bark(){
+		        System.out.println("woof ");
+		    }
+		}
+		class Hound extends Dog{
+		    public void sniff(){
+		        System.out.println("sniff ");
+		    }
+		 
+		    public void bark(){
+		        System.out.println("bowl");
+		    }
+		}
+		 
+		public class OverridingTest{
+		    public static void main(String [] args){
+		        Dog dog = new Hound();
+		        dog.bark();
+		    }
+		}
+
+		OUT = bowl ;
+
+	ESEMPIO Overloading
+
+		class Dog{
+	    public void bark(){
+	        System.out.println("woof ");
+	    }
+	 
+	    //overloading method
+	    public void bark(int num){
+	    	for(int i=0; i<num; i++)
+	    		System.out.println("woof ");
+	    }
+	}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+										REST
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+L'approccio architetturale REST è definito dai seguenti sei vincoli applicati ad una architettura, mentre si lascia libera l'implementazione dei singoli componenti.
+
+	* Client–server. 
+		Un insieme di interfacce uniformi separa i client dai server. Questa separazione di ruoli e preoccupazioni significa che, per esempio, il client non si deve preoccupare del salvataggio delle informazioni, che rimangono all'interno di ogni singolo server, in questo modo la portabilità del codice del client ne trae vantaggio. I server non si devono preoccupare dell'interfaccia grafica o dello stato dell'utente, in questo modo i server sono più semplici e maggiormente scalabili. Server e client possono essere sostituiti e sviluppati indipendentemente fintanto che l'interfaccia non viene modificata.
+
+	* Stateless. 
+		La comunicazione client–server è ulteriormente vincolata in modo che nessun contesto client venga memorizzato sul server tra le richieste. Ogni richiesta da ogni client contiene tutte le informazioni necessarie per richiedere il servizio, e lo stato della sessione è contenuto sul client. Lo stato della sessione può anche essere trasferito al server attraverso un altro servizio posto a persistere, ad esempio un database.
+
+	* Cacheable. 
+		Come nel World Wide Web, i client possono fare caching delle risposte. Le risposte devono in ogni modo definirsi implicitamente o esplicitamente cacheable o no, in modo da prevenire che i client possano riusare stati vecchi o dati errati. Una gestione ben fatta della cache può ridurre o parzialmente eliminare le comunicazioni client server, migliorando scalabilità e performance.
+
+	* Layered system. 
+		Un client non può dire se è connesso direttamente ad un server di livello più basso od intermedio, i server intermedi possono migliorare la scalabilità del sistema con load-balancing o con cache distribuite. Layer intermedi possono offrire inoltre politiche di sicurezza
+
+	* Code on demand. 
+		(opzionale) I server possono temporaneamente estendere o personalizzare le funzionalità del client trasferendo del codice eseguibile. Ad esempio questo può includere componenti compilati come Applet Java o linguaggi di scripting client side come JavaScript. "Code on demand" è l'unico vincolo opzionale per la definizione di un'architettura REST.
+
+	* Uniform interface. 
+		Un'interfaccia di comunicazione omogenea tra client e server permette di semplificare e disaccoppiare l'architettura, la quale si può evolvere separatamente.
+
+ Differenza tra Prepared Statement, Statememt and CallableStatement
+	 * Statement is slower while prepared statement is faster. In most of time, Statement interface is used for DDL statements like CREATE, ALTER, DROP 
+	* Statement will be used for executing static SQL statements and it can't accept input parameters. 
+    * PreparedStatement will be used for executing SQL statements many times dynamically. It will accept input parameters.
+		 PreparedStatement extends Statement interface.can pass the parameters to SQL query at run time using this interface. 
+		It is recommended to use PreparedStatement if you are executing a particular SQL query multiple times
+	* CallableStatement is Used to execute the stored procedures.
+
+METODI FONDAMENTALI DELLE SERVLET 
+
+	* public void init(ServletConfig config):initializes the servlet. It is the life cycle method of servlet and invoked by the web container   only once.
+	* public void service(ServletRequest request,ServletResponse response):	provides response for the incoming request. It is invoked at each request by the web container.
+	* public void destroy():is invoked only once and indicates that servlet is being destroyed.
+	* public ServletConfig getServletConfig():returns the object of ServletConfig.
+	* public String getServletInfo():returns information about servlet such as writer, copyright, version etc.
+
+JPA 
+A JPA (Java Persistence API) is a specification of Java which is used to access, manage, and persist data between Java object and relational database.JPA can be seen as a bridge between object-oriented domain models and relational database systems
+
+HIBERNET
+A Hibernate is a Java framework which is used to store the Java objects in the relational database system. It is an open-source, lightweight, ORM (Object Relational Mapping) tool
+it is an provider for jpa to store data in db.
+
+JSF 
+Java Server Faces (JSF) is a Java-based web application framework intended to simplify development integration of web-based user interfaces. JavaServer Faces is a standardized display technology, which was formalized in a specification through the Java Community Process.
+
